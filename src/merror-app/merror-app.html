@@ -1,0 +1,37 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/webrtc-video/webrtc-video.html">
+
+<dom-module id="merror-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        text-align: center;
+      }
+    </style>
+    <webrtc-video mute mirror width="{{width}}" height="{{height}}"></webrtc-video>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'merror-app',
+
+      properties: {
+        width: {
+          type: Number,
+          value: 500
+        },
+        height: {
+          type: Number,
+          value: 300
+        }
+      },
+      attached: function(){
+        this.width = window.innerWidth -10;
+        this.height = window.innerHeight -10;
+      }
+
+    });
+  </script>
+</dom-module>
