@@ -2,6 +2,7 @@
   "name": "merror",
   "description": "A mirror",
   "main": "index.html",
+  "license": "MIT",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "webrtc-video": "^0.0.2",

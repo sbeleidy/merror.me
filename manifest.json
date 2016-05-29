@@ -1,7 +1,8 @@
 {
   "name": "merror.me",
+  "short_name": "merror.me",
   "scope": "./",
-  "start_url": "index.html",
+  "start_url": "/index.html?homeScreen=1",
   "display": "standalone",
   "orientation": "any",
   "theme_color": "#000000",
