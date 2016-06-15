@@ -1,5 +1,9 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/webrtc-video/webrtc-video.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="simple-view.html">
+<link rel="import" href="magic-view.html">
 
 <dom-module id="merror-app">
   <template>
@@ -9,7 +13,22 @@
         text-align: center;
       }
     </style>
-    <webrtc-video mute mirror width="{{width}}" height="{{height}}"></webrtc-video>
+
+
+    <app-location route="{{route}}"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="/:page"
+        data="{{routeData}}"
+        tail="{{subroute}}">
+    </app-route>
+
+
+    <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
+      <simple-view name="simple"></simple-view>
+      <magic-view name="magic"></magic-view>
+    </iron-pages>
+
   </template>
 
   <script>
@@ -18,18 +37,17 @@
       is: 'merror-app',
 
       properties: {
-        width: {
-          type: Number,
-          value: 500
-        },
-        height: {
-          type: Number,
-          value: 300
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged'
         }
       },
-      attached: function(){
-        this.width = window.innerWidth -10;
-        this.height = window.innerHeight -10;
+      observers: [
+        '_routePageChanged(routeData.page)'
+      ],
+      _routePageChanged: function(page) {
+        this.page = page || 'simple';
       }
 
     });

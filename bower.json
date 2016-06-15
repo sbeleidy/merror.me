@@ -4,9 +4,13 @@
   "main": "index.html",
   "license": "MIT",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0",
-    "webrtc-video": "^0.0.2",
-    "platinum-sw": "PolymerElements/platinum-sw#^1.3.0"
+    "app-layout": "polymerelements/app-layout#^0.9.0",
+    "app-route": "polymerelements/app-route#^0.9.1",
+    "iron-pages": "polymerelements/iron-pages#^1.0.0",
+    "polymer": "Polymer/polymer#^1.5.0",
+    "webrtc-video": "^0.0.3",
+    "platinum-sw": "PolymerElements/platinum-sw#^1.3.0",
+    "analog-clock": "*"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
