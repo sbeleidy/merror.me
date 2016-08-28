@@ -1,0 +1,8 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/merror-app.html",
+  "fragments": [
+    "src/magic-view.html",
+    "src/simple-view.html"
+  ]
+}
